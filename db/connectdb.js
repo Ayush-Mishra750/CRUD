@@ -1,5 +1,6 @@
 import mongoose from "mongoose";
 
+//connection creating
 const connectDb=async(DATABASE_URL)=>{
     try {
        

@@ -1,5 +1,6 @@
 import studentModel from "../models/Student.js";
 class StudentController{
+    //insert the data
     static createDoc=async(req,res)=>{
     //   console.log(req.body);
     try {
@@ -18,6 +19,7 @@ class StudentController{
         console.log(error);
     }
     }
+    //get all the data
     static getAllDoc=async(req,res)=>{
         try {
             const result=await studentModel.find()
@@ -28,6 +30,7 @@ class StudentController{
            console.log(error); 
         }
     }
+    //edit the data
      static editDoc=async(req,res)=>{
         // console.log(req.params.id);
         // const {id}=req.params.id;
@@ -41,6 +44,7 @@ class StudentController{
 
         
     }
+    //updating the data
      static updateDocById=async(req,res)=>{
         try {
             const result=await studentModel.findByIdAndUpdate(req.params.id, req.body)
@@ -49,6 +53,7 @@ class StudentController{
         }
         res.redirect("/student")
     }
+    //delete the data
     static deleteDocByID=async(req,res)=>{
         // console.log(req.params.id);
         try {
